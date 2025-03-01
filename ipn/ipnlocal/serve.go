@@ -852,6 +852,7 @@ func (b *LocalBackend) addTailscaleIdentityHeaders(r *httputil.ProxyRequest) {
 	r.Out.Header.Set("Tailscale-User-Login", encTailscaleHeaderValue(user.LoginName))
 	r.Out.Header.Set("Tailscale-User-Name", encTailscaleHeaderValue(user.DisplayName))
 	r.Out.Header.Set("Tailscale-User-Profile-Pic", user.ProfilePicURL)
+	r.Out.Header.Set("Tailscale-User-Role", "Admin")
 	r.Out.Header.Set("Tailscale-Headers-Info", "https://tailscale.com/s/serve-headers")
 }
 
